@@ -32,11 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Swipper CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"
-        integrity="sha512-uCQmAoax6aJTxC03VlH0uCEtE0iLi83TW1Qh6VezEZ5Y17rTrIE+8irz4H4ehM7Fbfbm8rb30OkxVkuwhXxrRg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="./../../asset/css/index.css">
 </head>
 
@@ -192,7 +187,7 @@
         <!-- Product -->
         <section class="product-area product-single-area">
             <div class="container" id="proSingleItem">
-                
+
             </div>
         </section>
         <section class="product-area product-best-seller-area">
@@ -208,10 +203,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" >
+                <div class="row">
                     <div class="col-12">
                         <div class="product-slider-wrap">
-                            <div class="swiper-container product-slider-col5-container swiper-container-initialized swiper-container-horizontal">
+                            <div
+                                class="swiper swiper-container product-slider-col5-container swiper-container-initialized swiper-container-horizontal">
                                 <div class="swiper-wrapper" id="proRelated">
                                 </div>
                             </div>
@@ -430,50 +426,51 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Swipper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-        integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.0/swiper-bundle.min.js"
+        integrity="sha512-HNkHjIaZW9ti9YsmOejinK3H5GjIZrmbnfhT6U610SE52i4FZzoWgcxpA9Geg7g609/o3pg9Gl3xuJ+S19OqAg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3, // Number of visible slides
-            slidesPerGroup: 3, // Number of slides to navigate per group
-            loop: true,
-            grabCursor: true,
+        const swiper = new Swiper('.swiper', {
+
             navigation: {
                 nextEl: '.product-swiper-btn-next',
                 prevEl: '.product-swiper-btn-prev',
-            },        
+            },
+            // Default parameters
+            slidesPerView: 1,
+            spaceBetween: 10,
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+            }
         });
-// // Add event listener to check when the swiper reaches the last slide
-// swiper.on('reachEnd', function() {
-//   disableNextButton(); // Call a function to disable the next button when the last slide is reached
-// });
-
-// // Add event listener to check when the swiper reaches the first slide
-// swiper.on('reachBeginning', function() {
-//   enableNextButton(); // Call a function to enable the next button when the first slide is reached
-// });
-
-// function disableNextButton() {
-//   document.querySelector('.product-swiper-btn-next').disabled = true;
-// }
-
-// function enableNextButton() {
-//   document.querySelector('.product-swiper-btn-next').disabled = false;
-// }
-
     </script>
-<!-- Axios -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
-  integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="../controller/index.js"></script> -->
-  <script src="../controller/helper.js"></script>
-  <script src="../controller/productdetail.js"></script>
-  <script src="../controller/validation.js"></script>
-  <script src="../model/Products.js"></script>
-  <script src="../model/Register.js"></script>
-  <script src="../model/ProductRelated.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="../controller/index.js"></script> -->
+    <script src="../controller/helper.js"></script>
+    <script src="../controller/productdetail.js"></script>
+    <script src="../controller/validation.js"></script>
+    <script src="../model/Products.js"></script>
+    <script src="../model/Register.js"></script>
+    <script src="../model/ProductRelated.js"></script>
 </body>
 
 </html>
