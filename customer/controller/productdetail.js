@@ -1,32 +1,28 @@
 const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-console.log(productId)
-getDetail(productId)
-
+const productId = urlParams.get("id");
+console.log(productId);
+getDetail(productId);
 
 function getDetail(productId) {
-    
-    // dùng axios gọi dữ liệu từ server về
-    var promise = axios({
-      //     // url
-      url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${productId}`,
-      method: "get",
-    });
-    promise.then(function (res) {
-        console.log(res.data.content)       
-        renderProductDetail(res.data.content)
-    });
-     
-   
-  }
+  // dùng axios gọi dữ liệu từ server về
+  var promise = axios({
+    //     // url
+    url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${productId}`,
+    method: "get",
+  });
+  promise.then(function (res) {
+    console.log(res.data.content);
+    renderProductDetail(res.data.content);
+  });
+}
 
 function renderProductDetail(arr) {
-    var content = "";
-    var content2 = "";
-    var productsDetail = new ProductRelated();
-    Object.assign(productsDetail, arr);
-    console.log(productsDetail)
-    content += `
+  var content = "";
+  var content2 = "";
+  var productsDetail = new ProductRelated();
+  Object.assign(productsDetail, arr);
+  console.log(productsDetail);
+  content += `
     <div class="row">
                       <div class="col-12">
                           <div class="product-single-item">
@@ -37,7 +33,7 @@ function renderProductDetail(arr) {
                                               class="swiper-container single-product-thumb single-product-thumb-slider swiper-container-fade swiper-container-initialized swiper-container-horizontal">
                                               <div class="swiper-wrapper" style="transition-duration: 0ms;">
                                                   <div class="swiper-slide swiper-slide-active"
-                                                      style="width: 570px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                                      style="width: 442px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
                                                       <a class="lightbox-image" data-fancybox="gallery"
                                                           href="${productsDetail.image}">
                                                           <img src="${productsDetail.image}" width="570" height="541"
@@ -105,10 +101,10 @@ function renderProductDetail(arr) {
                       </div>
                   </div>
     `;
-    for (let i = 0; i < productsDetail.relatedProducts.length; i++) {
-        const element = productsDetail.relatedProducts[i];
-        console.log(element)
-        content2 += `
+  for (let i = 0; i < productsDetail.relatedProducts.length; i++) {
+    const element = productsDetail.relatedProducts[i];
+    console.log(element);
+    content2 += `
         
   
                   <div class="swiper-slide" style="width: 270px; margin-right: 30px;">
@@ -140,8 +136,8 @@ function renderProductDetail(arr) {
   
              
     `;
-    }
-      
-    document.getElementById("proSingleItem").innerHTML = content;
-    document.getElementById("proRelated").innerHTML = content2;
+  }
+
+  document.getElementById("proSingleItem").innerHTML = content;
+  document.getElementById("proRelated").innerHTML = content2;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Shome Product</title>
+    <title>Shome Product Detail</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -67,7 +67,7 @@
                                             </li>
                                             <li class="account">
                                                 <i class="fa-solid fa-user"></i>
-                                                <a href="#">Account</a>
+                                                <a href="./register.html">Register</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -173,7 +173,7 @@
                     <div class="col-12">
                         <div class="page-header-content">
                             <h2 class="title aos-init aos-animate" data-aos="fade-down" data-aos-duration="1000">Product
-                                Page</h2>
+                                Detail</h2>
                             <nav class="breadcrumb-area aos-init aos-animate" data-aos="fade-down"
                                 data-aos-duration="1200">
                                 <ul class="breadcrumb">
@@ -181,7 +181,7 @@
                                         <a href="./index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-sep">//</li>
-                                    <li>Product Page</li>
+                                    <li>Product Detail</li>
                                 </ul>
                             </nav>
                         </div>
@@ -211,7 +211,7 @@
                 <div class="row" >
                     <div class="col-12">
                         <div class="product-slider-wrap">
-                            <div class="swiper-container product-slider-col4-container swiper-container-initialized swiper-container-horizontal">
+                            <div class="swiper-container product-slider-col5-container swiper-container-initialized swiper-container-horizontal">
                                 <div class="swiper-wrapper" id="proRelated">
                                 </div>
                             </div>
@@ -435,14 +435,32 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
-            loop: false,
+            slidesPerView: 3, // Number of visible slides
+            slidesPerGroup: 3, // Number of slides to navigate per group
+            loop: true,
             grabCursor: true,
             navigation: {
                 nextEl: '.product-swiper-btn-next',
                 prevEl: '.product-swiper-btn-prev',
             },        
         });
+// // Add event listener to check when the swiper reaches the last slide
+// swiper.on('reachEnd', function() {
+//   disableNextButton(); // Call a function to disable the next button when the last slide is reached
+// });
 
+// // Add event listener to check when the swiper reaches the first slide
+// swiper.on('reachBeginning', function() {
+//   enableNextButton(); // Call a function to enable the next button when the first slide is reached
+// });
+
+// function disableNextButton() {
+//   document.querySelector('.product-swiper-btn-next').disabled = true;
+// }
+
+// function enableNextButton() {
+//   document.querySelector('.product-swiper-btn-next').disabled = false;
+// }
 
     </script>
 <!-- Axios -->
