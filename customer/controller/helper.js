@@ -66,7 +66,11 @@ function renderProduct(arr) {
                         <div class="product-info">
                           <div class="category">
                             <ul>
-                              <li><a href="shop.html">${cate[0].category} | ${cate[1].category} | ${cate[2].category}</a></li>
+                              <li><a href="shop.html">${cate[0].category}</a></li>
+                              <li class="sep">/</li>
+                              <li><a href="shop.html">${cate[1].category}</a></li>
+                              <li class="sep">/</li>
+                              <li><a href="shop.html">${cate[2].category}</a></li>
                             </ul>
                           </div>
                           <h4 class="title"><a href="#">${products.name}</a></h4>
